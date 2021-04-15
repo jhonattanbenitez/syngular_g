@@ -13,6 +13,9 @@ const Hero = () => {
             Discover <br /> Evolve <br /> Launch
           </h1>
         </article>
+        <div className="hero-video">
+          <Video />
+        </div>
       </div>
     </header>
   );
