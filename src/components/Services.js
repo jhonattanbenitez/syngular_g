@@ -16,9 +16,6 @@ const Services = () => {
               <div className="underline"></div>
               <div className="paragraph">
                 {paragraph.map((p) => {
-                  console.log(p.id);
-                  console.log(p.title);
-                  console.log(p.text);
                   const { id, title, text } = p;
                   return (
                     <div key={id}>
