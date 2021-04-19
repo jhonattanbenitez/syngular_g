@@ -1,28 +1,26 @@
-import * as React from "react";
+import React from "react";
 import Layout from "../components/Layout";
-import Hero from "../components/Hero";
-import Services from "../components/Services";
-import Projects from "../components/Projects";
 import { graphql } from "gatsby";
+import Projects from "../components/Projects";
+/* import SEO from "../components/SEO"; */
 
-export default ({ data }) => {
+const ProjectsPage = ({ data }) => {
   const {
     allWpPost: { nodes: projects },
   } = data;
-
+  console.log(data);
   return (
     <Layout>
-      <Hero />
-      <Services />
-      <Projects projects={projects} title="Últimos proyectos" showLink />
+      <section className="projects-page">
+        <Projects projects={projects} title="Todos nuestros proyectos" />
+      </section>
     </Layout>
   );
 };
-// markup
 
 export const query = graphql`
   {
-    allWpPost(limit: 2) {
+    allWpPost {
       nodes {
         content
         id
@@ -39,3 +37,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default ProjectsPage;
