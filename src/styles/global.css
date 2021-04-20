@@ -43,7 +43,8 @@ Variables
   --clr-green-dark: hsl(125, 67%, 35%);
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
-  --clr-white: #99e159;
+  --clr-white: white;
+  --clr-green: #99e159;
   --ff-primary: "Inter", sans-serif;
   --ff-secondary: "Work Sans", sans-serif;
   --transition: all 0.3s linear;
@@ -457,7 +458,7 @@ Hero
     left: 65%;
     right: 0;
     bottom: 0;
-    background: var(--clr-white);
+    background: var(--clr-green);
   }
   .hero-center {
     grid-template-columns: repeat(12, 1fr);
@@ -946,9 +947,17 @@ About Page
 @media screen and (min-width: 992px) {
   .about-center {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     column-gap: 4rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+  .about-last-name {
+    color: #99e159;
+  }
+  .about-center img {
+    width: 425px;
   }
   .about-img {
     grid-column: 1 / span 5;
