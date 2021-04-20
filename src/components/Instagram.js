@@ -11,15 +11,14 @@ const Instagram = ({ instagram, title, showLink }) => {
       <div className="section-center projects-center">
         {instagram.map((post, index) => {
           console.log(post);
-          return (
-            <IGpost key={index} index={index} post={post}>
-              post
-            </IGpost>
-          );
+          return <IGpost key={index} index={index} post={post} />;
         })}
       </div>
       {showLink && (
-        <Link to="/projects" className="btn center-btn">
+        <Link
+          to="https://www.instagram.com/wearesyngular/"
+          className="btn center-btn"
+        >
           Ir a instagram
         </Link>
       )}
