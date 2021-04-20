@@ -56,5 +56,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token:
+          "IGQVJYejMxZADFoTDJNV3JaMXZA5SUVtUU80Y3J4aURfQ3A4U1RRS01CMjVzeFBhMEVTc3pva01kaUs0akRheTRPY3R4WXlpWm1WSk9jSTZAVdXVmUFpBWkJtbmNQV294WmlnM1UxdEZA4UHpFRkhtSUhjXwZDZD",
+      },
+    },
   ],
 };
