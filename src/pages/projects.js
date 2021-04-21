@@ -6,7 +6,7 @@ import Projects from "../components/Projects";
 
 const ProjectsPage = ({ data }) => {
   const {
-    allWpPost: { nodes: projects },
+    allWpPost: { edges: projects },
   } = data;
   console.log(data);
   return (
@@ -21,16 +21,19 @@ const ProjectsPage = ({ data }) => {
 export const query = graphql`
   {
     allWpPost {
-      nodes {
-        content
-        id
-        title
-        excerpt
-        featuredImage {
-          node {
-            sizes
-            slug
-            guid
+      edges {
+        node {
+          id
+          title
+          content
+          featuredImage {
+            node {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
           }
         }
       }

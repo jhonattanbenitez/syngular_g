@@ -8,10 +8,11 @@ import { graphql } from "gatsby";
 
 export default ({ data }) => {
   const {
-    allWpPost: { nodes: projects },
+    allWpPost: { edges: projects },
     allInstagramContent: { edges: instagram },
   } = data;
   console.log(instagram);
+  console.log(projects);
   return (
     <Layout>
       <Hero />
@@ -26,16 +27,19 @@ export default ({ data }) => {
 export const query = graphql`
   {
     allWpPost(limit: 2) {
-      nodes {
-        content
-        id
-        title
-        excerpt
-        featuredImage {
-          node {
-            sizes
-            slug
-            guid
+      edges {
+        node {
+          id
+          title
+          content
+          featuredImage {
+            node {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
           }
         }
       }
@@ -45,6 +49,7 @@ export const query = graphql`
         node {
           caption
           media_url
+          permalink
           localImage {
             childImageSharp {
               gatsbyImageData
