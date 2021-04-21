@@ -948,21 +948,28 @@ About Page
   margin-right: 0.25rem;
   font-size: 1rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 676px) {
   .about-center {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    column-gap: 4rem;
-    margin-right: 2rem;
-    margin-left: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem;
+  }
+  .content-about {
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .about-center {
+    grid-template-columns: 1f 1fr 1fr;
   }
   .about-last-name {
     color: #99e159;
   }
-  .about-center img {
-    width: 425px;
-  }
+  /* .about-center img {
+    width: 500px;
+  } */
   .about-img {
     grid-column: 1 / span 5;
     margin-bottom: 0;

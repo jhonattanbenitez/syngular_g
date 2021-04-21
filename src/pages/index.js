@@ -26,7 +26,12 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allWpPost(limit: 2) {
+    allWpPost(
+      limit: 2
+      filter: {
+        categories: { nodes: { elemMatch: { name: { eq: "Branding" } } } }
+      }
+    ) {
       edges {
         node {
           id

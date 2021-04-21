@@ -20,7 +20,11 @@ const ProjectsPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allWpPost {
+    allWpPost(
+      filter: {
+        categories: { nodes: { elemMatch: { name: { eq: "Branding" } } } }
+      }
+    ) {
       edges {
         node {
           id

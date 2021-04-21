@@ -5,13 +5,13 @@ import Project from "./Project";
 import { Link } from "gatsby";
 
 const Projects = ({ projects, title, showLink }) => {
-  console.log(projects);
+  console.log(projects[0].node);
   return (
     <section className="section projects">
       <Title title={title} />
       <div className="section-center projects-center">
         {projects.map((project, index) => {
-          return <Project key={project.id} index={index} project={project} />;
+          return <Project key={index} index={index} project={project} />;
         })}
       </div>
       {showLink && (
