@@ -5,7 +5,7 @@ import IGpost from "./IGpost";
 
 const Instagram = ({ instagram, title, showLink }) => {
   return (
-    <section className="section projects">
+    <section className="section instagram">
       <Title title={title} />
       <div className="section-center projects-center">
         {instagram.map((post, index) => {

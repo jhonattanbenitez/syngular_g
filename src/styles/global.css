@@ -649,6 +649,9 @@ Projects
 ===============
 */
 .projects {
+  background: var(--clr-primary-10);
+}
+.instagram {
   background: var(--clr-grey-10);
 }
 .project {

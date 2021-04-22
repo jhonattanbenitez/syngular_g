@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 
 const Blogs = ({ posts, title, showLik }) => {
   return (
-    <section>
+    <section className="section">
       <Title title={title} />
       <div className="section-center blogs-center">
         {posts.map((post, index) => {

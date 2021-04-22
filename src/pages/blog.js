@@ -12,7 +12,7 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       {/* <SEO title="Blog" /> */}
-      <section className="Nuestro Blog">
+      <section className="blog-page">
         <Blogs posts={posts} title="Nuestro Blog" />
       </section>
     </Layout>

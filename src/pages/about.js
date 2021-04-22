@@ -57,6 +57,7 @@ export const query = graphql`
       filter: {
         categories: { nodes: { elemMatch: { name: { eq: "Staff" } } } }
       }
+      sort: { order: ASC, fields: date }
     ) {
       edges {
         node {
