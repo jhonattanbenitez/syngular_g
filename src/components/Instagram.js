@@ -2,7 +2,6 @@ import React from "react";
 import Title from "./Title";
 import IGpost from "./IGpost";
 /* import projects from "../constants/projects"; */
-import { Link } from "gatsby";
 
 const Instagram = ({ instagram, title, showLink }) => {
   return (
@@ -10,17 +9,16 @@ const Instagram = ({ instagram, title, showLink }) => {
       <Title title={title} />
       <div className="section-center projects-center">
         {instagram.map((post, index) => {
-          console.log(post);
           return <IGpost key={index} index={index} post={post} />;
         })}
       </div>
       {showLink && (
-        <Link
-          to="https://www.instagram.com/wearesyngular/"
+        <a
+          href="https://www.instagram.com/wearesyngular/"
           className="btn center-btn"
         >
           Ir a instagram
-        </Link>
+        </a>
       )}
     </section>
   );

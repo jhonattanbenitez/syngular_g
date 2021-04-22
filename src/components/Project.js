@@ -4,7 +4,6 @@ import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { FaShareSquare } from "react-icons/fa";
 
 const Project = ({ project, index }) => {
-  console.log(project.node);
   const { title, content, featuredImage } = project.node;
 
   return (

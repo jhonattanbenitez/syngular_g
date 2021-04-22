@@ -5,7 +5,6 @@ import Project from "./Project";
 import { Link } from "gatsby";
 
 const Projects = ({ projects, title, showLink }) => {
-  console.log(projects[0].node);
   return (
     <section className="section projects">
       <Title title={title} />

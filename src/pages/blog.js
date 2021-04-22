@@ -1,18 +1,19 @@
 import React from "react";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
-import Projects from "../components/Projects";
+import Blogs from "../components/Blogs";
 /* import SEO from "../components/SEO"; */
 
-const ProjectsPage = ({ data }) => {
+const Blog = ({ data }) => {
   const {
-    allWpPost: { edges: projects },
+    blogs: { edges: posts },
   } = data;
-  console.log(projects);
+  console.log(posts);
   return (
     <Layout>
-      <section className="projects-page">
-        <Projects projects={projects} title="Todos nuestros proyectos" />
+      {/* <SEO title="Blog" /> */}
+      <section className="Nuestro Blog">
+        <Blogs posts={posts} title="Nuestro Blog" />
       </section>
     </Layout>
   );
@@ -20,16 +21,17 @@ const ProjectsPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allWpPost(
-      filter: {
-        categories: { nodes: { elemMatch: { name: { eq: "Branding" } } } }
-      }
+    blogs: allWpPost(
+      filter: { categories: { nodes: { elemMatch: { name: { eq: "post" } } } } }
     ) {
       edges {
         node {
           id
           title
           content
+          excerpt
+          date(formatString: "DD, MM, YYYY")
+          slug
           featuredImage {
             node {
               localFile {
@@ -44,5 +46,4 @@ export const query = graphql`
     }
   }
 `;
-
-export default ProjectsPage;
+export default Blog;
